@@ -1,6 +1,6 @@
 .footer {
   position: relative;
-  margin-top: 20px;
+  margin-top: 40px;
   margin-left: 50px;
   padding-bottom: 20px;
 }
@@ -37,18 +37,16 @@
 .footer-intro {
   margin-top: 20px;
 }
-.footer-intro-wrap li {
+.footer-intro li {
   color: rgba(255, 255, 255, 0.7);
   font-size: 11px;
   letter-spacing: -0.5px;
   line-height: 20px;
-}
-.footer-intro-wrap li {
   display: inline-block;
 }
 .icon-container {
   position: absolute;
-  top: 161px;
+  top: 150px;
   right: 50px;
 }
 .icon-container a {

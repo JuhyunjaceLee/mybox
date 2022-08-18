@@ -1,0 +1,52 @@
+.ranking-header {
+  display: flex;
+  justify-content: space-between;
+}
+.rating-btn-wrap {
+  margin-right: 45px;
+  position: relative;
+}
+.rating-btn {
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: flex;
+  cursor: pointer;
+}
+.rating-btn span {
+  font-size: 13px;
+}
+.rating-btn-img {
+  width: 20px;
+  margin-left: 3px;
+}
+.rating-dropdown {
+  display: none;
+}
+.rating-dropdown.active {
+  display: block;
+  font-size: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  padding: 5px 5px 5px 10px;
+  position: absolute;
+  z-index: 1;
+}
+.rating-dropdown li {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.rating-dropdown-btn {
+  border: none;
+  display: flex;
+  cursor: pointer;
+}
+.rating-dropdown-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.rating-number {
+  margin-left: 9px;
+  font-size: 12px;
+}

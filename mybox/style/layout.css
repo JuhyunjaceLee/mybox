@@ -9,3 +9,9 @@
 button {
   background-color: transparent;
 }
+.contents {
+  width: 100%;
+  background: black;
+  padding-left: 240px;
+  padding-top: 65px;
+}

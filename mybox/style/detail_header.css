@@ -1,0 +1,23 @@
+.header {
+  width: 100%;
+  height: 65px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  padding-left: 240px;
+}
+.account-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.account {
+  width: 35px;
+  height: 35px;
+  display: block;
+  margin-right: 20px;
+  cursor: pointer;
+}

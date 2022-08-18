@@ -1,0 +1,21 @@
+.search-input {
+  margin-left: 50px;
+  background: rgb(34, 35, 38);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+.search-img {
+  width: 20px;
+}
+.search-title {
+  margin-left: 9px;
+  font-size: 20px;
+}
+main {
+  min-height: calc(100vh - 65px - 290px);
+}
+.list-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
