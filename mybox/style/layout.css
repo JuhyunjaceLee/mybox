@@ -15,3 +15,46 @@ button {
   padding-left: 240px;
   padding-top: 65px;
 }
+.main {
+  min-height: calc(100vh - 65px - 290px);
+}
+.main-title {
+  margin-left: 9px;
+  font-size: 20px;
+}
+.list-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.poster-list {
+  width: 195px;
+  height: 287px;
+  margin: 10px;
+  position: relative;
+}
+@media (max-width: 1669px) {
+  .poster-list {
+    width: 150px;
+    height: 221px;
+  }
+}
+@media (max-width: 1280px) {
+  .poster-list {
+    width: 117px;
+    height: 172px;
+  }
+}
+.poster-link {
+  width: 100%;
+  height: 100%;
+}
+.poster-img {
+  width: 100%;
+  height: 100%;
+}
+input::placeholder {
+  color: rgb(132, 134, 141);
+}
+input:focus {
+  outline: 1px solid #ffee35;
+}

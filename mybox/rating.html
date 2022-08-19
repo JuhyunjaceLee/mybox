@@ -9,44 +9,43 @@
     <link rel="stylesheet" href="style/nav.css" />
     <link rel="stylesheet" href="style/header.css" />
     <link rel="stylesheet" href="style/homeMain.css" />
-    <link rel="stylesheet" href="style/searchMain.css" />
     <link rel="stylesheet" href="style/ratingMain.css" />
     <link rel="stylesheet" href="style/footer.css" />
   </head>
   <body>
     <div class="container">
       <nav class="nav">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="home.html">
           <img class="nav-logo-img" src="img/mybox_logo.png" alt="logo_image" />
         </a>
         <section class="side-container">
           <ul class="side-list-wrap">
-            <li class="side-list active">
-              <a class="side-link" href="#">
+            <li class="side-list">
+              <a class="side-link" href="home.html">
                 <img class="side-img" src="img/home.svg" alt="home" />
                 <p class="side-txt">홈</p>
               </a>
             </li>
             <li class="side-list">
-              <a class="side-link" href="#">
+              <a class="side-link" href="search.html">
                 <img class="side-img" src="img/search.svg" alt="search" />
                 <p class="side-txt">찾기</p>
               </a>
             </li>
-            <li class="side-list">
-              <a class="side-link" href="#">
+            <li class="side-list active">
+              <a class="side-link" href="rating.html">
                 <img class="side-img" src="img/star.svg" alt="rating" />
                 <p class="side-txt">평점보기</p>
               </a>
             </li>
             <li class="side-list">
-              <a class="side-link" href="#">
+              <a class="side-link" href="#" onclick="alert('준비중입니다.')">
                 <img class="side-img" src="img/storage.svg" alt="storage" />
                 <p class="side-txt">보관함</p>
               </a>
             </li>
             <li class="side-list">
-              <a class="side-link" href="#">
+              <a class="side-link" href="#" onclick="alert('준비중입니다.')">
                 <img class="side-img" src="img/checkbox.svg" alt="contents" />
                 <p class="side-txt">다 본 콘텐츠</p>
               </a>
@@ -66,11 +65,11 @@
       </header>
     </div>
     <div class="contents">
-      <main>
+      <main class="main">
         <div class="main-wrap">
           <div class="main-content">
             <div class="ranking-header">
-              <h2 class="search-title">평점보기</h2>
+              <h2 class="main-title">평점보기</h2>
               <div class="rating-btn-wrap">
                 <button class="rating-btn">
                   <span>평점 높은 순</span>
@@ -80,25 +79,15 @@
                     alt=""
                   />
                 </button>
-                <ul class="rating-dropdown active">
+                <ul class="rating-dropdown">
                   <li>
                     <button class="rating-dropdown-btn">
                       <span>평점 높은 순</span>
-                      <img
-                        class="rating-btn-img"
-                        src="img/arrow_bottom.svg"
-                        alt=""
-                      />
                     </button>
                   </li>
                   <li>
                     <button class="rating-dropdown-btn">
                       <span>평점 낮은 순</span>
-                      <img
-                        class="rating-btn-img"
-                        src="img/arrow_bottom.svg"
-                        alt=""
-                      />
                     </button>
                   </li>
                 </ul>
@@ -286,16 +275,16 @@
         </ul>
         <div class="icon-container">
           <a href="https://www.facebook.com/watchaKR/">
-            <img src="img/facebook.svg" alt="" />
+            <img src="img/facebook.svg" alt="facebook" />
           </a>
           <a href="https://twitter.com/watcha_kr">
-            <img src="img/twitter.svg" alt="" />
+            <img src="img/twitter.svg" alt="twitter" />
           </a>
           <a href="https://www.instagram.com/watcha_kr/">
-            <img src="img/instagram.svg" alt="" />
+            <img src="img/instagram.svg" alt="instagram" />
           </a>
           <a href="./home.html">
-            <img src="img/alpha_k.svg" alt="" />
+            <img src="img/footer_home.svg" alt="home" />
           </a>
         </div>
         <div class="footer-copyright">

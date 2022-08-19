@@ -9,43 +9,43 @@
     <link rel="stylesheet" href="style/nav.css" />
     <link rel="stylesheet" href="style/header.css" />
     <link rel="stylesheet" href="style/homeMain.css" />
-    <link rel="stylesheet" href="style/searchMain.css" />
+    <link rel="stylesheet" href="style/search_header.css" />
     <link rel="stylesheet" href="style/footer.css" />
   </head>
   <body>
     <div class="container">
       <nav class="nav">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="home.html">
           <img class="nav-logo-img" src="img/mybox_logo.png" alt="logo_image" />
         </a>
         <section class="side-container">
           <ul class="side-list-wrap">
-            <li class="side-list active">
-              <a class="side-link" href="#">
+            <li class="side-list">
+              <a class="side-link" href="home.html">
                 <img class="side-img" src="img/home.svg" alt="home" />
                 <p class="side-txt">홈</p>
               </a>
             </li>
-            <li class="side-list">
-              <a class="side-link" href="#">
+            <li class="side-list active">
+              <a class="side-link" href="search.html">
                 <img class="side-img" src="img/search.svg" alt="search" />
                 <p class="side-txt">찾기</p>
               </a>
             </li>
             <li class="side-list">
-              <a class="side-link" href="#">
+              <a class="side-link" href="rating.html">
                 <img class="side-img" src="img/star.svg" alt="rating" />
                 <p class="side-txt">평점보기</p>
               </a>
             </li>
             <li class="side-list">
-              <a class="side-link" href="#">
+              <a class="side-link" href="#" onclick="alert('준비중입니다.')">
                 <img class="side-img" src="img/storage.svg" alt="storage" />
                 <p class="side-txt">보관함</p>
               </a>
             </li>
             <li class="side-list">
-              <a class="side-link" href="#">
+              <a class="side-link" href="#" onclick="alert('준비중입니다.')">
                 <img class="side-img" src="img/checkbox.svg" alt="contents" />
                 <p class="side-txt">다 본 콘텐츠</p>
               </a>
@@ -55,25 +55,35 @@
       </nav>
       <header class="header">
         <div class="account-wrap">
-          <div></div>
+          <div class="input-wrap">
+            <input
+              class="search-input"
+              type="text"
+              placeholder="제목, 감독으로 검색"
+              autofocus
+            />
+            <button class="search-btn">
+              <img class="search-img" src="img/search_gray.svg" alt="" />
+            </button>
+          </div>
           <div class="acoount-content">
             <a class="account" href="#">
-              <img class="account-img" src="img/account.svg" alt="account" />
+              <img src="img/account.svg" alt="account" />
             </a>
           </div>
         </div>
       </header>
     </div>
     <div class="contents">
-      <main>
+      <main class="main">
         <div class="main-wrap">
           <div class="main-content">
-            <h2 class="search-title">검색결과</h2>
+            <h2 class="main-title">검색결과</h2>
             <section>
               <div class="list-wrap">
                 <ul class="list-container">
                   <li class="poster-list">
-                    <a class="poster-link" href="">
+                    <a class="poster-link" href="detailPage.html">
                       <img
                         class="poster-img"
                         src="img/movie_poster.jpg"
@@ -82,7 +92,7 @@
                     </a>
                   </li>
                   <li class="poster-list">
-                    <a class="poster-link" href="">
+                    <a class="poster-link" href="detailPage.html">
                       <img
                         class="poster-img"
                         src="img/movie_poster.jpg"
@@ -91,7 +101,7 @@
                     </a>
                   </li>
                   <li class="poster-list">
-                    <a class="poster-link" href="">
+                    <a class="poster-link" href="detailPage.html">
                       <img
                         class="poster-img"
                         src="img/movie_poster.jpg"
@@ -100,7 +110,7 @@
                     </a>
                   </li>
                   <li class="poster-list">
-                    <a class="poster-link" href="">
+                    <a class="poster-link" href="detailPage.html">
                       <img
                         class="poster-img"
                         src="img/movie_poster.jpg"
@@ -109,7 +119,7 @@
                     </a>
                   </li>
                   <li class="poster-list">
-                    <a class="poster-link" href="">
+                    <a class="poster-link" href="detailPage.html">
                       <img
                         class="poster-img"
                         src="img/movie_poster.jpg"
@@ -118,7 +128,7 @@
                     </a>
                   </li>
                   <li class="poster-list">
-                    <a class="poster-link" href="">
+                    <a class="poster-link" href="detailPage.html">
                       <img
                         class="poster-img"
                         src="img/movie_poster.jpg"
@@ -127,7 +137,7 @@
                     </a>
                   </li>
                   <li class="poster-list">
-                    <a class="poster-link" href="">
+                    <a class="poster-link" href="detailPage.html">
                       <img
                         class="poster-img"
                         src="img/movie_poster.jpg"
@@ -136,7 +146,7 @@
                     </a>
                   </li>
                   <li class="poster-list">
-                    <a class="poster-link" href="">
+                    <a class="poster-link" href="detailPage.html">
                       <img
                         class="poster-img"
                         src="img/movie_poster.jpg"
@@ -145,7 +155,7 @@
                     </a>
                   </li>
                   <li class="poster-list">
-                    <a class="poster-link" href="">
+                    <a class="poster-link" href="detailPage.html">
                       <img
                         class="poster-img"
                         src="img/movie_poster.jpg"
@@ -154,7 +164,7 @@
                     </a>
                   </li>
                   <li class="poster-list">
-                    <a class="poster-link" href="">
+                    <a class="poster-link" href="detailPage.html">
                       <img
                         class="poster-img"
                         src="img/movie_poster.jpg"
@@ -163,7 +173,7 @@
                     </a>
                   </li>
                   <li class="poster-list">
-                    <a class="poster-link" href="">
+                    <a class="poster-link" href="detailPage.html">
                       <img
                         class="poster-img"
                         src="img/movie_poster.jpg"
@@ -172,7 +182,7 @@
                     </a>
                   </li>
                   <li class="poster-list">
-                    <a class="poster-link" href="">
+                    <a class="poster-link" href="detailPage.html">
                       <img
                         class="poster-img"
                         src="img/movie_poster.jpg"
@@ -215,16 +225,16 @@
         </ul>
         <div class="icon-container">
           <a href="https://www.facebook.com/watchaKR/">
-            <img src="img/facebook.svg" alt="" />
+            <img src="img/facebook.svg" alt="facebook" />
           </a>
           <a href="https://twitter.com/watcha_kr">
-            <img src="img/twitter.svg" alt="" />
+            <img src="img/twitter.svg" alt="twitter" />
           </a>
           <a href="https://www.instagram.com/watcha_kr/">
-            <img src="img/instagram.svg" alt="" />
+            <img src="img/instagram.svg" alt="instagram" />
           </a>
           <a href="./home.html">
-            <img src="img/alpha_k.svg" alt="" />
+            <img src="img/footer_home.svg" alt="home" />
           </a>
         </div>
         <div class="footer-copyright">
