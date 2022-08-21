@@ -1,0 +1,19 @@
+.input-wrap {
+  margin-left: 60px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.search-input {
+  background: rgb(34, 35, 38);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  width: 230px;
+  caret-color: #ffee35;
+}
+.search-btn {
+  border: none;
+  width: 20px;
+  cursor: pointer;
+}

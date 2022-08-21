@@ -1,0 +1,148 @@
+body {
+  background-color: black;
+}
+.login-contents {
+  display: flex;
+  flex-direction: column;
+}
+.header-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+}
+.logo-link {
+  display: block;
+  margin: 24px 0 0 26px;
+  cursor: pointer;
+  width: 140px;
+}
+.logo-img {
+  width: 100%;
+  height: 51px;
+}
+.sign-btn {
+  margin-right: 20px;
+  background: #ffee35;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.sign-btn p {
+  color: #303133;
+  font-weight: 700;
+}
+.login-main {
+  min-height: 464px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-main-wrap {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.loginmain-title-wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 14px;
+}
+.loginmain-title {
+  letter-spacing: -0.5;
+  font-size: 18px;
+  font-weight: 700;
+}
+.loginmain-title + a p {
+  font-size: 12px;
+  font-weight: 400;
+  padding-top: 4px;
+  opacity: 0.5;
+}
+.login-main-form {
+  width: 100%;
+}
+.input {
+  width: 100%;
+  font-size: 16px;
+  letter-spacing: -0.5;
+  border: 1px solid #d4d4d4;
+  padding: 10px 10px 10px 14px;
+  color: #000;
+  margin-bottom: 3px;
+}
+.input::placeholder {
+  font-size: 16px;
+  font-weight: 530;
+}
+input:focus {
+  outline: 3px solid #ffee35;
+}
+.btn-wrap {
+  margin-top: 16px;
+}
+.login-btn {
+  border: none;
+  width: 100%;
+  height: 48px;
+  background-color: #ffee35;
+  color: #303133;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 40px;
+  cursor: pointer;
+}
+.loginicon-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.loginicon-text {
+  margin: 15px 0 13px;
+  font-size: 12px;
+  font-weight: 550;
+  opacity: 0.6;
+}
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+.btn-login {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+.btn-login img {
+  width: 38px;
+  background: transparent;
+}
+.login-footer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 35px;
+  font-size: 11px;
+}
+.login-footer-cs {
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+}
+.login-footer-cs li:first-child::after {
+  content: "/";
+  width: 20px;
+}
+.login-footer-intro {
+  display: flex;
+  justify-content: center;
+  font-weight: 550;
+  opacity: 0.4;
+}
+.login-footer-intro li::after {
+  content: "/";
+}
+.login-footer-intro li:last-child::after {
+  content: "";
+}
