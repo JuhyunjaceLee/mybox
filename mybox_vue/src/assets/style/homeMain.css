@@ -1,10 +1,11 @@
 .main-wrap {
-  margin-left: 50px;
+  margin-left: 20px;
   margin-top: 50px;
 }
 .home-main-title {
-  width: 95%;
+  width: 98%;
   padding-bottom: 5px;
+  padding-left: 10px;
   border-bottom: 1px solid #303133;
 }
 .btn-wrap {
@@ -50,7 +51,7 @@
   display: inline-block;
   transform: rotate(-135deg);
   top: 47.5%;
-  left: -15px;
+  left: -10px;
   cursor: pointer;
 }
 .next-btn {

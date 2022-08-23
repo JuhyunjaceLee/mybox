@@ -1,116 +1,20 @@
 <template>
   <div>
     <section>
-      <h2 class="section-title">MOVIE TOP 20</h2>
+      <h2 class="section-title">TV TOP 20</h2>
       <div class="home-list-wrap">
         <button class="prev-btn prev1"></button>
         <ul class="home-list-container">
-          <li class="poster-list">
-            <span class="ranking">1</span>
+          <li
+            v-for="(item, index) in tvTopList"
+            :key="item.id"
+            class="poster-list"
+          >
+            <span class="ranking">{{ index + 1 }}</span>
             <a class="poster-link" href="detailPage.html">
               <img
                 class="poster-img"
-                src="../assets/img/movie_poster.jpg"
-                alt="poster_img"
-              />
-            </a>
-          </li>
-          <li class="poster-list">
-            <span class="ranking">2</span>
-            <a class="poster-link" href="detailPage.html">
-              <img
-                class="poster-img"
-                src="../assets/img/movie_poster.jpg"
-                alt="poster_img"
-              />
-            </a>
-          </li>
-          <li class="poster-list">
-            <span class="ranking">3</span>
-            <a class="poster-link" href="detailPage.html">
-              <img
-                class="poster-img"
-                src="../assets/img/movie_poster.jpg"
-                alt="poster_img"
-              />
-            </a>
-          </li>
-          <li class="poster-list">
-            <span class="ranking">4</span>
-            <a class="poster-link" href="detailPage.html">
-              <img
-                class="poster-img"
-                src="../assets/img/movie_poster.jpg"
-                alt="poster_img"
-              />
-            </a>
-          </li>
-          <li class="poster-list">
-            <span class="ranking">5</span>
-            <a class="poster-link" href="detailPage.html">
-              <img
-                class="poster-img"
-                src="../assets/img/movie_poster.jpg"
-                alt="poster_img"
-              />
-            </a>
-          </li>
-          <li class="poster-list">
-            <span class="ranking">6</span>
-            <a class="poster-link" href="detailPage.html">
-              <img
-                class="poster-img"
-                src="../assets/img/movie_poster.jpg"
-                alt="poster_img"
-              />
-            </a>
-          </li>
-          <li class="poster-list">
-            <span class="ranking">7</span>
-            <a class="poster-link" href="detailPage.html">
-              <img
-                class="poster-img"
-                src="../assets/img/movie_poster.jpg"
-                alt="poster_img"
-              />
-            </a>
-          </li>
-          <li class="poster-list">
-            <span class="ranking">8</span>
-            <a class="poster-link" href="detailPage.html">
-              <img
-                class="poster-img"
-                src="../assets/img/movie_poster.jpg"
-                alt="poster_img"
-              />
-            </a>
-          </li>
-          <li class="poster-list">
-            <span class="ranking">9</span>
-            <a class="poster-link" href="detailPage.html">
-              <img
-                class="poster-img"
-                src="../assets/img/movie_poster.jpg"
-                alt="poster_img"
-              />
-            </a>
-          </li>
-          <li class="poster-list">
-            <span class="ranking">10</span>
-            <a class="poster-link" href="detailPage.html">
-              <img
-                class="poster-img"
-                src="../assets/img/movie_poster.jpg"
-                alt="poster_img"
-              />
-            </a>
-          </li>
-          <li class="poster-list">
-            <span class="ranking">11</span>
-            <a class="poster-link" href="detailPage.html">
-              <img
-                class="poster-img"
-                src="../assets/img/movie_poster.jpg"
+                :src="`https://image.tmdb.org/t/p/w300/${item.poster_path}`"
                 alt="poster_img"
               />
             </a>
@@ -120,78 +24,15 @@
       </div>
     </section>
     <section>
-      <h2 class="section-title">NOW PLAYING</h2>
+      <h2 class="section-title">ON AIR</h2>
       <div class="home-list-wrap">
         <button class="prev-btn"></button>
         <ul class="home-list-container">
-          <li class="poster-list">
+          <li v-for="item in onAirList" :key="item.id" class="poster-list">
             <a class="poster-link" href="detailPage.html">
               <img
                 class="poster-img"
-                src="../assets/img/movie_poster.jpg"
-                alt="poster_img"
-              />
-            </a>
-          </li>
-          <li class="poster-list">
-            <a class="poster-link" href="detailPage.html">
-              <img
-                class="poster-img"
-                src="../assets/img/movie_poster.jpg"
-                alt="poster_img"
-              />
-            </a>
-          </li>
-          <li class="poster-list">
-            <a class="poster-link" href="detailPage.html">
-              <img
-                class="poster-img"
-                src="../assets/img/movie_poster.jpg"
-                alt="poster_img"
-              />
-            </a>
-          </li>
-          <li class="poster-list">
-            <a class="poster-link" href="detailPage.html">
-              <img
-                class="poster-img"
-                src="../assets/img/movie_poster.jpg"
-                alt="poster_img"
-              />
-            </a>
-          </li>
-          <li class="poster-list">
-            <a class="poster-link" href="detailPage.html">
-              <img
-                class="poster-img"
-                src="../assets/img/movie_poster.jpg"
-                alt="poster_img"
-              />
-            </a>
-          </li>
-          <li class="poster-list">
-            <a class="poster-link" href="detailPage.html">
-              <img
-                class="poster-img"
-                src="../assets/img/movie_poster.jpg"
-                alt="poster_img"
-              />
-            </a>
-          </li>
-          <li class="poster-list">
-            <a class="poster-link" href="detailPage.html">
-              <img
-                class="poster-img"
-                src="../assets/img/movie_poster.jpg"
-                alt="poster_img"
-              />
-            </a>
-          </li>
-          <li class="poster-list">
-            <a class="poster-link" href="detailPage.html">
-              <img
-                class="poster-img"
-                src="../assets/img/movie_poster.jpg"
+                :src="`https://image.tmdb.org/t/p/w300/${item.poster_path}`"
                 alt="poster_img"
               />
             </a>
@@ -201,78 +42,15 @@
       </div>
     </section>
     <section>
-      <h2 class="section-title">개봉 예정작</h2>
+      <h2 class="section-title">화제 방영작</h2>
       <div class="home-list-wrap">
         <button class="prev-btn"></button>
         <ul class="home-list-container">
-          <li class="poster-list">
+          <li v-for="item in popularList" :key="item.id" class="poster-list">
             <a class="poster-link" href="detailPage.html">
               <img
                 class="poster-img"
-                src="../assets/img/movie_poster.jpg"
-                alt="poster_img"
-              />
-            </a>
-          </li>
-          <li class="poster-list">
-            <a class="poster-link" href="detailPage.html">
-              <img
-                class="poster-img"
-                src="../assets/img/movie_poster.jpg"
-                alt="poster_img"
-              />
-            </a>
-          </li>
-          <li class="poster-list">
-            <a class="poster-link" href="detailPage.html">
-              <img
-                class="poster-img"
-                src="../assets/img/movie_poster.jpg"
-                alt="poster_img"
-              />
-            </a>
-          </li>
-          <li class="poster-list">
-            <a class="poster-link" href="detailPage.html">
-              <img
-                class="poster-img"
-                src="../assets/img/movie_poster.jpg"
-                alt="poster_img"
-              />
-            </a>
-          </li>
-          <li class="poster-list">
-            <a class="poster-link" href="detailPage.html">
-              <img
-                class="poster-img"
-                src="../assets/img/movie_poster.jpg"
-                alt="poster_img"
-              />
-            </a>
-          </li>
-          <li class="poster-list">
-            <a class="poster-link" href="detailPage.html">
-              <img
-                class="poster-img"
-                src="../assets/img/movie_poster.jpg"
-                alt="poster_img"
-              />
-            </a>
-          </li>
-          <li class="poster-list">
-            <a class="poster-link" href="detailPage.html">
-              <img
-                class="poster-img"
-                src="../assets/img/movie_poster.jpg"
-                alt="poster_img"
-              />
-            </a>
-          </li>
-          <li class="poster-list">
-            <a class="poster-link" href="detailPage.html">
-              <img
-                class="poster-img"
-                src="../assets/img/movie_poster.jpg"
+                :src="`https://image.tmdb.org/t/p/w300/${item.poster_path}`"
                 alt="poster_img"
               />
             </a>
@@ -285,7 +63,38 @@
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+export default {
+  data() {
+    return {
+      tvTopList: [],
+      onAirList: [],
+      popularList: [],
+    };
+  },
+  async created() {
+    const top = await axios({
+      method: "get",
+      url: "https://api.themoviedb.org/3/tv/top_rated?api_key=075ec9542e8f0d1c7b9364e54d4351d8",
+    });
+    this.tvTopList = top.data.results;
+    console.log(this.tvTopList);
+
+    const onAir = await axios({
+      method: "get",
+      url: "https://api.themoviedb.org/3/tv/on_the_air?api_key=075ec9542e8f0d1c7b9364e54d4351d8",
+    });
+    this.onAirList = onAir.data.results;
+    console.log(this.onAirList);
+
+    const popular = await axios({
+      method: "get",
+      url: "https://api.themoviedb.org/3/tv/popular?api_key=075ec9542e8f0d1c7b9364e54d4351d8",
+    });
+    this.popularList = popular.data.results;
+    console.log(this.popularList);
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>

@@ -23,11 +23,25 @@
             <div class="main-content">
               <h1 class="home-main-title">홈</h1>
               <div class="btn-wrap">
-                <button class="btn active">영화</button>
-                <button class="btn">TV 프로그램</button>
+                <button
+                  @click="btn = 'movie'"
+                  class="btn"
+                  :class="{ active: btn === 'movie' }"
+                  type="button"
+                >
+                  영화
+                </button>
+                <button
+                  @click="btn = 'tv'"
+                  class="btn"
+                  :class="{ active: btn === 'tv' }"
+                  type="button"
+                >
+                  TV 프로그램
+                </button>
               </div>
-              <HomeMovieSection></HomeMovieSection>
-              <HomeTvSection></HomeTvSection>
+              <HomeMovieSection v-if="btn === 'movie'"></HomeMovieSection>
+              <HomeTvSection v-if="btn === 'tv'"></HomeTvSection>
             </div>
           </div>
         </main>
@@ -46,6 +60,11 @@ export default {
     DefaultLayout,
     HomeMovieSection,
     HomeTvSection,
+  },
+  data() {
+    return {
+      btn: "movie",
+    };
   },
 };
 </script>
