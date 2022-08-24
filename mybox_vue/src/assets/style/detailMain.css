@@ -1,10 +1,11 @@
 main {
   min-height: calc(100vh - 65px - 239px);
 }
-
 .detail-movie-wrap {
   margin-left: 50px;
+  margin-top: 50px;
   display: flex;
+  align-items: center;
 }
 .detail-img {
   width: 169px;
@@ -19,9 +20,10 @@ main {
   width: 100%;
 }
 .movie-title {
-  font-size: 64px;
+  font-size: 32px;
   font-weight: 900;
   width: 100%;
+  margin-bottom: 7px;
 }
 .detail-explain-wrap {
   color: rgb(186, 186, 193);
@@ -30,11 +32,11 @@ main {
 .detail-explain {
   display: inline-block;
 }
-.detail-explain span:nth-child(4) {
+.detail-explain span:nth-child(3) {
   font-weight: 700;
   color: #fff;
 }
-.detail-explain span:nth-child(5) {
+.detail-explain span:nth-child(4) {
   display: inline-block;
   background: rgba(255, 255, 255, 0.3);
   width: 1px;

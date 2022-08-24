@@ -2,40 +2,40 @@
   <div>
     <div class="container">
       <nav class="nav">
-        <a class="nav-link" href="home.html">
+        <router-link to="/" class="nav-link">
           <img
             class="nav-logo-img"
             src="../assets/img/mybox_logo.png"
             alt="logo_image"
           />
-        </a>
+        </router-link>
         <section class="side-container">
           <ul class="side-list-wrap">
             <li class="side-list active">
-              <a class="side-link" href="home.html">
+              <router-link to="/" class="side-link">
                 <img class="side-img" src="../assets/img/home.svg" alt="home" />
                 <p class="side-txt">홈</p>
-              </a>
+              </router-link>
             </li>
             <li class="side-list">
-              <a class="side-link" href="search.html">
+              <router-link to="/search" class="side-link">
                 <img
                   class="side-img"
                   src="../assets/img/search.svg"
                   alt="search"
                 />
                 <p class="side-txt">찾기</p>
-              </a>
+              </router-link>
             </li>
             <li class="side-list">
-              <a class="side-link" href="rating.html">
+              <router-link to="/rating" class="side-link">
                 <img
                   class="side-img"
                   src="../assets/img/star.svg"
                   alt="rating"
                 />
                 <p class="side-txt">평점보기</p>
-              </a>
+              </router-link>
             </li>
             <li class="side-list">
               <a class="side-link" href="#" onclick="alert('준비중입니다.')">
@@ -81,27 +81,26 @@
           <div class="detail-movie-wrap">
             <img
               class="detail-img"
-              src="./../assets/img/movie_poster.jpg"
+              :src="`https://image.tmdb.org/t/p/w300/${detailData.poster_path}`"
               alt=""
             />
             <div class="detail-section">
-              <h1 class="movie-title">라라랜드</h1>
+              <h1 class="movie-title">{{ detailData.original_title }}</h1>
               <div class="detail-explain-wrap">
                 <p class="detail-explain">
-                  <span>음악</span>
+                  <span>{{ detailData.release_date }}</span>
                   ·
-                  <span>OST</span>
+                  <span>{{ detailData.runtime }} 분</span>
                   ·
-                  <span>2시간 7분</span>
-                  ·
-                  <span>예상 4.8</span>
+                  <span
+                    >평점
+                    {{ parseFloat(detailData.vote_average).toFixed(1) }}</span
+                  >
                   <span></span>
                   <span class="age">12</span>
                 </p>
                 <p class="story">
-                  재즈의 부활을 꿈꾸는 피아니스트 세바스찬과 성공을 꿈꾸는 배우
-                  지망생 미아. 인생에서 가장 빛나는 순간 만난 두 사람은 미완성인
-                  서로의 무대를 함께 만들어가기 시작한다.
+                  {{ detailData.overview }}
                 </p>
                 <div class="play-wrap">
                   <div class="play-bar">
@@ -260,7 +259,25 @@
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+export default {
+  data() {
+    return {
+      detailData: [],
+    };
+  },
+  async created() {
+    const type = this.$route.query.type;
+    console.log(this.$route);
+
+    const result = await axios({
+      method: "get",
+      url: `https://api.themoviedb.org/3/${type}/${this.$route.params.id}?api_key=3d6c850fedd64a507e51cfb2335f305c`,
+    });
+    this.detailData = result.data;
+    console.log(this.detailData);
+  },
+};
 </script>
 
 <style scoped>

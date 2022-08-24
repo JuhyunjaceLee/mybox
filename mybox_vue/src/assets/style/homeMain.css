@@ -68,6 +68,14 @@
   right: 15px;
   cursor: pointer;
 }
+.prev-btn:hover {
+  border-top: 5px solid #ffee35;
+  border-right: 5px solid #ffee35;
+}
+.next-btn:hover {
+  border-top: 5px solid #ffee35;
+  border-right: 5px solid #ffee35;
+}
 
 .ranking {
   position: absolute;

@@ -94,23 +94,23 @@
           <li>마이박스-MyBox</li>
         </ul>
         <div class="icon-container">
-          <a href="https://www.facebook.com/watchaKR/">
+          <a href="#">
             <img src="../assets/img/facebook.svg" alt="facebook" />
           </a>
-          <a href="https://twitter.com/watcha_kr">
+          <a href="#">
             <img src="../assets/img/twitter.svg" alt="twitter" />
           </a>
-          <a href="https://www.instagram.com/watcha_kr/">
+          <a href="#">
             <img src="../assets/img/instagram.svg" alt="instagram" />
           </a>
-          <a href="./home.html">
+          <router-link to="/">
             <img src="../assets/img/footer_home.svg" alt="home" />
-          </a>
+          </router-link>
         </div>
         <div class="footer-copyright">
-          <a href="./home.html">
+          <router-link to="/">
             <img class="logo-small" src="../assets/img/mybox_logo.png" alt="" />
-          </a>
+          </router-link>
           <span>Copyright ©</span>
           <span>2022</span>
           <span>by</span>

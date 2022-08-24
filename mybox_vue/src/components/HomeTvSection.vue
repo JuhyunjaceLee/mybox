@@ -11,13 +11,13 @@
             class="poster-list"
           >
             <span class="ranking">{{ index + 1 }}</span>
-            <a class="poster-link" href="detailPage.html">
+            <router-link :to="`/tv/${item.id}?type=tv`" class="poster-link">
               <img
                 class="poster-img"
                 :src="`https://image.tmdb.org/t/p/w300/${item.poster_path}`"
                 alt="poster_img"
               />
-            </a>
+            </router-link>
           </li>
         </ul>
         <button class="next-btn next1"></button>
@@ -29,13 +29,13 @@
         <button class="prev-btn"></button>
         <ul class="home-list-container">
           <li v-for="item in onAirList" :key="item.id" class="poster-list">
-            <a class="poster-link" href="detailPage.html">
+            <router-link :to="`/tv/${item.id}?type=tv`" class="poster-link">
               <img
                 class="poster-img"
                 :src="`https://image.tmdb.org/t/p/w300/${item.poster_path}`"
                 alt="poster_img"
               />
-            </a>
+            </router-link>
           </li>
         </ul>
         <button class="next-btn"></button>
@@ -47,13 +47,13 @@
         <button class="prev-btn"></button>
         <ul class="home-list-container">
           <li v-for="item in popularList" :key="item.id" class="poster-list">
-            <a class="poster-link" href="detailPage.html">
+            <router-link :to="`/tv/${item.id}?type=tv`" class="poster-link">
               <img
                 class="poster-img"
                 :src="`https://image.tmdb.org/t/p/w300/${item.poster_path}`"
                 alt="poster_img"
               />
-            </a>
+            </router-link>
           </li>
         </ul>
         <button class="next-btn"></button>
