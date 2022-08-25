@@ -1,82 +1,23 @@
 <template>
   <div>
-    <div class="container">
-      <nav class="nav">
-        <router-link to="/" class="nav-link">
-          <img
-            class="nav-logo-img"
-            src="../assets/img/mybox_logo.png"
-            alt="logo_image"
-          />
-        </router-link>
-        <section class="side-container">
-          <ul class="side-list-wrap">
-            <li class="side-list active">
-              <router-link to="/" class="side-link">
-                <img class="side-img" src="../assets/img/home.svg" alt="home" />
-                <p class="side-txt">홈</p>
+    <DefaultLayout>
+      <template v-slot:header>
+        <header class="header">
+          <div class="account-wrap">
+            <div></div>
+            <div class="acoount-content">
+              <router-link to="/login" class="account">
+                <img
+                  class="account-img"
+                  src="../assets/img/account.svg"
+                  alt="account"
+                />
               </router-link>
-            </li>
-            <li class="side-list">
-              <router-link to="/search" class="side-link">
-                <img
-                  class="side-img"
-                  src="../assets/img/search.svg"
-                  alt="search"
-                />
-                <p class="side-txt">찾기</p>
-              </router-link>
-            </li>
-            <li class="side-list">
-              <router-link to="/rating" class="side-link">
-                <img
-                  class="side-img"
-                  src="../assets/img/star.svg"
-                  alt="rating"
-                />
-                <p class="side-txt">평점보기</p>
-              </router-link>
-            </li>
-            <li class="side-list">
-              <a class="side-link" href="#" onclick="alert('준비중입니다.')">
-                <img
-                  class="side-img"
-                  src="../assets/img/storage.svg"
-                  alt="storage"
-                />
-                <p class="side-txt">보관함</p>
-              </a>
-            </li>
-            <li class="side-list">
-              <a class="side-link" href="#" onclick="alert('준비중입니다.')">
-                <img
-                  class="side-img"
-                  src="../assets/img/checkbox.svg"
-                  alt="contents"
-                />
-                <p class="side-txt">다 본 콘텐츠</p>
-              </a>
-            </li>
-          </ul>
-        </section>
-      </nav>
-      <header class="header">
-        <div class="account-wrap">
-          <div></div>
-          <div class="acoount-content">
-            <a class="account" href="#">
-              <img
-                class="account-img"
-                src="../assets/img/account.svg"
-                alt="account"
-              />
-            </a>
+            </div>
           </div>
-        </div>
-      </header>
-    </div>
-    <div class="contents">
-      <main>
+        </header>
+      </template>
+      <template v-slot:main>
         <section class="detail-movie-contain">
           <div class="detail-movie-wrap">
             <img
@@ -89,8 +30,13 @@
               <div class="detail-explain-wrap">
                 <p class="detail-explain">
                   <span>{{ detailData.release_date }}</span>
+                  <span>{{ detailData.first_air_date }}</span>
+
                   ·
-                  <span>{{ detailData.runtime }} 분</span>
+                  <span v-if="detailData.runtime"
+                    >{{ detailData.runtime }}분</span
+                  >
+                  <span v-else>총 {{ detailData.number_of_episodes }}화</span>
                   ·
                   <span
                     >평점
@@ -137,133 +83,44 @@
           <div class="movie-info-header">
             <ul>
               <li>
-                <button class="active">
-                  <a href="./detailPage.html">작품 정보</a>
+                <button
+                  @click="btn = 'info'"
+                  :class="{ active: btn === 'info' }"
+                >
+                  <p>작품 정보</p>
                 </button>
               </li>
               <li>
-                <button>
-                  <a href="./detailSimilar.html">관련 작품</a>
+                <button
+                  @click="btn = 'similar'"
+                  :class="{ active: btn === 'similar' }"
+                >
+                  <p>관련 작품</p>
                 </button>
               </li>
             </ul>
           </div>
           <div class="movie-info-credit">
-            <div>
-              <h2>감독/출연</h2>
-            </div>
-            <div class="credit-wrap">
-              <div>
-                <div class="credit-intro-wrap">
-                  <img src="./../assets/img/actor.jpg" alt="" />
-                  <div class="credit-intro">
-                    <p class="credit-name">라이언 고슬링</p>
-                    <p class="credit-role">라이언 고슬링</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div class="credit-intro-wrap">
-                  <img src="./../assets/img/actor.jpg" alt="" />
-                  <div class="credit-intro">
-                    <p class="credit-name">NAME</p>
-                    <p class="credit-role">ROLE</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div class="credit-intro-wrap">
-                  <img src="./../assets/img/actor.jpg" alt="" />
-                  <div class="credit-intro">
-                    <p class="credit-name">NAME</p>
-                    <p class="credit-role">ROLE</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div class="credit-intro-wrap">
-                  <img src="./../assets/img/actor.jpg" alt="" />
-                  <div class="credit-intro">
-                    <p class="credit-name">NAME</p>
-                    <p class="credit-role">ROLE</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div class="credit-intro-wrap">
-                  <img src="./../assets/img/actor.jpg" alt="" />
-                  <div class="credit-intro">
-                    <p class="credit-name">NAME</p>
-                    <p class="credit-role">ROLE</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <DetailInfo v-if="btn === 'info'"></DetailInfo>
+            <DetailSimilar v-if="btn === 'similar'"></DetailSimilar>
           </div>
         </section>
-      </main>
-      <footer class="footer">
-        <ul class="footer-service">
-          <li>마이박스 서비스 이용약관</li>
-          <li>개인정보 처리 방침</li>
-          <li>마이박스 서비스 이용약관</li>
-          <li>고객센터</li>
-          <li>채용정보</li>
-        </ul>
-        <ul class="footer-cs">
-          <li>
-            <span>고객센터(이용 및 결제 문의)</span>
-            <span>heyjace777@gmail.com</span>
-          </li>
-          <li>
-            <span>제휴 및 대외 협력</span>
-            <span>heyjace777@gmail.com</span>
-          </li>
-          <li>
-            <span>B2B 이용권 구매 문의</span>
-            <span>heyjace777@gmail.com</span>
-          </li>
-        </ul>
-        <ul class="footer-intro">
-          <li>마이박스-MyBox</li>
-          <li>사업자등록번호 1234-123-123</li>
-          <li>통신판매업 신고번호</li>
-        </ul>
-        <div class="icon-container">
-          <a href="https://www.facebook.com/watchaKR/">
-            <img src="../assets/img/facebook.svg" alt="" />
-          </a>
-          <a href="https://twitter.com/watcha_kr">
-            <img src="../assets/img/twitter.svg" alt="" />
-          </a>
-          <a href="https://www.instagram.com/watcha_kr/">
-            <img src="../assets/img/instagram.svg" alt="" />
-          </a>
-          <a href="./home.html">
-            <img src="../assets/img/footer_home.svg" alt="home" />
-          </a>
-        </div>
-        <div class="footer-copyright">
-          <a href="./home.html">
-            <img class="logo-small" src="../assets/img/mybox_logo.png" alt="" />
-          </a>
-          <span>Copyright ©</span>
-          <span>2022</span>
-          <span>by</span>
-          <span><b>MYBOX, Inc.</b></span>
-          <span>All rights reserved.</span>
-        </div>
-      </footer>
-    </div>
+      </template>
+    </DefaultLayout>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import DefaultLayout from "@/components/DefaultLayout.vue";
+import DetailInfo from "@/components/DetailInfo.vue";
+import DetailSimilar from "@/components/DetailSimilar.vue";
 export default {
+  components: { DefaultLayout, DetailInfo, DetailSimilar },
   data() {
     return {
       detailData: [],
+      btn: "info",
     };
   },
   async created() {
