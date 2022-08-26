@@ -26,7 +26,10 @@
               alt=""
             />
             <div class="detail-section">
-              <h1 class="movie-title">{{ detailData.original_title }}</h1>
+              <h1 v-if="detailData.original_title" class="movie-title">
+                {{ detailData.original_title }}
+              </h1>
+              <h1 v-else class="movie-title">{{ detailData.original_name }}</h1>
               <div class="detail-explain-wrap">
                 <p class="detail-explain">
                   <span>{{ detailData.release_date }}</span>

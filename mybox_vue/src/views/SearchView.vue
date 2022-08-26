@@ -6,12 +6,15 @@
           <div class="account-wrap">
             <div class="input-wrap">
               <input
+                @keypress.enter="searchGo"
+                v-model="searchKeyword"
+                ref="search"
                 class="search-input"
                 type="text"
                 placeholder="제목, 감독으로 검색"
                 autofocus
               />
-              <button class="search-btn">
+              <button @click="searchGo" class="search-btn">
                 <img
                   class="search-img"
                   src="../assets/img/search_gray.svg"
@@ -28,127 +31,12 @@
         </header>
       </template>
       <template v-slot:main>
-        <main class="main">
-          <div class="main-wrap">
-            <div class="main-content">
-              <h2 class="main-title">검색결과</h2>
-              <section>
-                <div class="list-wrap">
-                  <ul class="list-container">
-                    <li class="poster-list">
-                      <a class="poster-link" href="detailPage.html">
-                        <img
-                          class="poster-img"
-                          src="../assets/img/movie_poster.jpg"
-                          alt="poster_img"
-                        />
-                      </a>
-                    </li>
-                    <li class="poster-list">
-                      <a class="poster-link" href="detailPage.html">
-                        <img
-                          class="poster-img"
-                          src="../assets/img/movie_poster.jpg"
-                          alt="poster_img"
-                        />
-                      </a>
-                    </li>
-                    <li class="poster-list">
-                      <a class="poster-link" href="detailPage.html">
-                        <img
-                          class="poster-img"
-                          src="../assets/img/movie_poster.jpg"
-                          alt="poster_img"
-                        />
-                      </a>
-                    </li>
-                    <li class="poster-list">
-                      <a class="poster-link" href="detailPage.html">
-                        <img
-                          class="poster-img"
-                          src="../assets/img/movie_poster.jpg"
-                          alt="poster_img"
-                        />
-                      </a>
-                    </li>
-                    <li class="poster-list">
-                      <a class="poster-link" href="detailPage.html">
-                        <img
-                          class="poster-img"
-                          src="../assets/img/movie_poster.jpg"
-                          alt="poster_img"
-                        />
-                      </a>
-                    </li>
-                    <li class="poster-list">
-                      <a class="poster-link" href="detailPage.html">
-                        <img
-                          class="poster-img"
-                          src="../assets/img/movie_poster.jpg"
-                          alt="poster_img"
-                        />
-                      </a>
-                    </li>
-                    <li class="poster-list">
-                      <a class="poster-link" href="detailPage.html">
-                        <img
-                          class="poster-img"
-                          src="../assets/img/movie_poster.jpg"
-                          alt="poster_img"
-                        />
-                      </a>
-                    </li>
-                    <li class="poster-list">
-                      <a class="poster-link" href="detailPage.html">
-                        <img
-                          class="poster-img"
-                          src="../assets/img/movie_poster.jpg"
-                          alt="poster_img"
-                        />
-                      </a>
-                    </li>
-                    <li class="poster-list">
-                      <a class="poster-link" href="detailPage.html">
-                        <img
-                          class="poster-img"
-                          src="../assets/img/movie_poster.jpg"
-                          alt="poster_img"
-                        />
-                      </a>
-                    </li>
-                    <li class="poster-list">
-                      <a class="poster-link" href="detailPage.html">
-                        <img
-                          class="poster-img"
-                          src="../assets/img/movie_poster.jpg"
-                          alt="poster_img"
-                        />
-                      </a>
-                    </li>
-                    <li class="poster-list">
-                      <a class="poster-link" href="detailPage.html">
-                        <img
-                          class="poster-img"
-                          src="../assets/img/movie_poster.jpg"
-                          alt="poster_img"
-                        />
-                      </a>
-                    </li>
-                    <li class="poster-list">
-                      <a class="poster-link" href="detailPage.html">
-                        <img
-                          class="poster-img"
-                          src="../assets/img/movie_poster.jpg"
-                          alt="poster_img"
-                        />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </section>
-            </div>
-          </div>
-        </main>
+        <SearchTrend v-if="!searchAction"></SearchTrend>
+        <SearchMain
+          ref="searchMain"
+          v-else
+          :searchKeyword="searchKeyword"
+        ></SearchMain>
       </template>
     </DefaultLayout>
   </div>
@@ -156,10 +44,42 @@
 
 <script>
 import DefaultLayout from "@/components/DefaultLayout.vue";
+import SearchMain from "@/components/SearchMain.vue";
+import SearchTrend from "@/components/SearchTrend.vue";
 
 export default {
   components: {
     DefaultLayout,
+    SearchMain,
+    SearchTrend,
+  },
+  data() {
+    return {
+      searchKeyword: "",
+      searchAction: false,
+    };
+  },
+
+  watch: {
+    searchKeyword() {
+      if (this.searchKeyword === "") {
+        this.searchAction = false;
+      }
+    },
+  },
+
+  mounted() {
+    this.$refs.search.focus();
+  },
+
+  methods: {
+    searchGo() {
+      if (this.searchKeyword === "") {
+        this.searchAction = false;
+      } else {
+        this.searchAction = true;
+      }
+    },
   },
 };
 </script>
