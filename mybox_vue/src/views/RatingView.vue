@@ -24,23 +24,23 @@
               <div class="ranking-header">
                 <h2 class="main-title">평점보기</h2>
                 <div class="rating-btn-wrap">
-                  <button class="rating-btn">
-                    <span>평점 높은 순</span>
+                  <button @click="show = !show" class="rating-btn">
+                    <span>MOVIE</span>
                     <img
                       class="rating-btn-img"
                       src="../assets/img/arrow_bottom.svg"
                       alt=""
                     />
                   </button>
-                  <ul class="rating-dropdown">
+                  <ul v-if="show" class="rating-dropdown">
                     <li>
                       <button class="rating-dropdown-btn">
-                        <span>평점 높은 순</span>
+                        <span>MOVIE</span>
                       </button>
                     </li>
                     <li>
                       <button class="rating-dropdown-btn">
-                        <span>평점 낮은 순</span>
+                        <span>TV</span>
                       </button>
                     </li>
                   </ul>
@@ -48,152 +48,8 @@
               </div>
               <section>
                 <div class="list-wrap">
-                  <ul class="list-container">
-                    <div>
-                      <li class="poster-list">
-                        <a class="poster-link" href="">
-                          <img
-                            class="poster-img"
-                            src="../assets/img/movie_poster.jpg"
-                            alt="poster_img"
-                          />
-                        </a>
-                      </li>
-                      <p class="rating-number">평점 4.8</p>
-                    </div>
-                    <div>
-                      <li class="poster-list">
-                        <a class="poster-link" href="">
-                          <img
-                            class="poster-img"
-                            src="../assets/img/movie_poster.jpg"
-                            alt="poster_img"
-                          />
-                        </a>
-                      </li>
-                      <p class="rating-number">평점 4.8</p>
-                    </div>
-                    <div>
-                      <li class="poster-list">
-                        <a class="poster-link" href="">
-                          <img
-                            class="poster-img"
-                            src="../assets/img/movie_poster.jpg"
-                            alt="poster_img"
-                          />
-                        </a>
-                      </li>
-                      <p class="rating-number">평점 4.8</p>
-                    </div>
-                    <div>
-                      <li class="poster-list">
-                        <a class="poster-link" href="">
-                          <img
-                            class="poster-img"
-                            src="../assets/img/movie_poster.jpg"
-                            alt="poster_img"
-                          />
-                        </a>
-                      </li>
-                      <p class="rating-number">평점 4.8</p>
-                    </div>
-                    <div>
-                      <li class="poster-list">
-                        <a class="poster-link" href="">
-                          <img
-                            class="poster-img"
-                            src="../assets/img/movie_poster.jpg"
-                            alt="poster_img"
-                          />
-                        </a>
-                      </li>
-                      <p class="rating-number">평점 4.8</p>
-                    </div>
-                    <div>
-                      <li class="poster-list">
-                        <a class="poster-link" href="">
-                          <img
-                            class="poster-img"
-                            src="../assets/img/movie_poster.jpg"
-                            alt="poster_img"
-                          />
-                        </a>
-                      </li>
-                      <p class="rating-number">평점 4.8</p>
-                    </div>
-                    <div>
-                      <li class="poster-list">
-                        <a class="poster-link" href="">
-                          <img
-                            class="poster-img"
-                            src="../assets/img/movie_poster.jpg"
-                            alt="poster_img"
-                          />
-                        </a>
-                      </li>
-                      <p class="rating-number">평점 4.8</p>
-                    </div>
-                    <div>
-                      <li class="poster-list">
-                        <a class="poster-link" href="">
-                          <img
-                            class="poster-img"
-                            src="../assets/img/movie_poster.jpg"
-                            alt="poster_img"
-                          />
-                        </a>
-                      </li>
-                      <p class="rating-number">평점 4.8</p>
-                    </div>
-                    <div>
-                      <li class="poster-list">
-                        <a class="poster-link" href="">
-                          <img
-                            class="poster-img"
-                            src="../assets/img/movie_poster.jpg"
-                            alt="poster_img"
-                          />
-                        </a>
-                      </li>
-                      <p class="rating-number">평점 4.8</p>
-                    </div>
-                    <div>
-                      <li class="poster-list">
-                        <a class="poster-link" href="">
-                          <img
-                            class="poster-img"
-                            src="../assets/img/movie_poster.jpg"
-                            alt="poster_img"
-                          />
-                        </a>
-                      </li>
-                      <p class="rating-number">평점 4.8</p>
-                    </div>
-                    <div>
-                      <li class="poster-list">
-                        <a class="poster-link" href="">
-                          <img
-                            class="poster-img"
-                            src="../assets/img/movie_poster.jpg"
-                            alt="poster_img"
-                          />
-                        </a>
-                      </li>
-                      <p class="rating-number">평점 4.8</p>
-                    </div>
-                    <div>
-                      <li class="poster-list">
-                        <a class="poster-link" href="">
-                          <img
-                            class="poster-img"
-                            src="../assets/img/movie_poster.jpg"
-                            alt="poster_img"
-                          />
-                        </a>
-                      </li>
-                      <p class="rating-number">평점 4.8</p>
-                    </div>
-                  </ul>
+                  <RatingMovie></RatingMovie>
+                  <RatingTv></RatingTv>
                 </div>
               </section>
             </div>
@@ -206,10 +62,19 @@
 
 <script>
 import DefaultLayout from "@/components/DefaultLayout.vue";
+import RatingMovie from "@/components/RatingMovie.vue";
+import RatingTv from "@/components/RatingTv.vue";
 
 export default {
   components: {
     DefaultLayout,
+    RatingMovie,
+    RatingTv,
+  },
+  data() {
+    return {
+      show: false,
+    };
   },
 };
 </script>
