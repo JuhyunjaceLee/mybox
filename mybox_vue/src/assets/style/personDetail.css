@@ -1,0 +1,29 @@
+main {
+  min-height: calc(100vh - 65px - 239px);
+}
+.person-detail-wrap {
+  margin: 50px;
+  display: flex;
+}
+.person-img {
+  width: 300px;
+}
+.person-no-img {
+  width: 200px;
+}
+.person-info-contents {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+.person-info-wrap {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.person-info-a {
+  font-size: 18px;
+  font-weight: 600;
+}

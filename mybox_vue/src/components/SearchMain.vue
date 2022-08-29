@@ -13,8 +13,15 @@
                   :to="`/${item.media_type}/${item.id}?type=${item.media_type}`"
                 >
                   <img
-                    v-if="item.poster_path && item.poster_path !== null"
+                    v-if="
+                      item.media_type === 'movie' || item.media_type === 'tv'
+                    "
                     :src="`https://image.tmdb.org/t/p/w300/${item.poster_path}`"
+                    class="poster-img"
+                  />
+                  <img
+                    v-if="item.media_type === 'person'"
+                    :src="`https://image.tmdb.org/t/p/w300/${item.profile_path}`"
                     class="poster-img"
                   />
                   <img
@@ -47,6 +54,7 @@ export default {
   data() {
     return {
       searchList: [],
+      searchPersonList: [],
       total: 0,
     };
   },
@@ -57,6 +65,8 @@ export default {
     });
     this.searchList = searchResult.data.results;
     console.log(this.searchList);
+    this.searchPersonList = searchResult.data.results;
+    console.log(this.searchPersonList);
     this.total = searchResult.data.total_results;
   },
 };

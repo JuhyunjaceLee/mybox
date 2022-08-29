@@ -1,0 +1,27 @@
+.main {
+  margin-left: 50px;
+}
+.person-detail-wrap {
+  display: flex;
+}
+.person-img {
+  width: 300px;
+}
+.person-info-contents {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+.person-info-wrap {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+.person-info-a {
+  font-size: 18px;
+  font-weight: 600;
+}
+.person-info-b {
+  margin-left: 40px;
+}

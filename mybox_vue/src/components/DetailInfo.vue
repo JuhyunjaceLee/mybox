@@ -8,35 +8,39 @@
         v-for="item in directingsList.slice(0, 1)"
         :key="`crews_${item.credit_id}`"
       >
-        <div class="credit-intro-wrap">
-          <img
-            v-if="item.profile_path !== null"
-            :src="`https://image.tmdb.org/t/p/w185/${item.profile_path}`"
-            alt="profile_img"
-          />
-          <img v-else src="../assets/img/no_img.svg" alt="profile_img" />
-          <div class="credit-intro">
-            <p class="credit-name">{{ item.name }}</p>
-            <p class="credit-depart">{{ item.department }}</p>
+        <router-link :to="`/person/${item.id}`">
+          <div class="credit-intro-wrap">
+            <img
+              v-if="item.profile_path !== null"
+              :src="`https://image.tmdb.org/t/p/w185/${item.profile_path}`"
+              alt="profile_img"
+            />
+            <img v-else src="../assets/img/no_img.svg" alt="profile_img" />
+            <div class="credit-intro">
+              <p class="credit-name">{{ item.name }}</p>
+              <p class="credit-depart">{{ item.department }}</p>
+            </div>
           </div>
-        </div>
+        </router-link>
       </div>
       <div
         v-for="item in creditsList.slice(0, 7)"
         :key="`credits_${item.credit_id}`"
       >
-        <div class="credit-intro-wrap">
-          <img
-            v-if="item.profile_path !== null"
-            :src="`https://image.tmdb.org/t/p/w185/${item.profile_path}`"
-            alt="profile_img"
-          />
-          <img v-else src="../assets/img/no_img.svg" alt="profile_img" />
-          <div class="credit-intro">
-            <p class="credit-name">{{ item.name }}</p>
-            <p class="credit-character">{{ item.character }}</p>
+        <router-link :to="`/person/${item.id}`">
+          <div class="credit-intro-wrap">
+            <img
+              v-if="item.profile_path !== null"
+              :src="`https://image.tmdb.org/t/p/w185/${item.profile_path}`"
+              alt="profile_img"
+            />
+            <img v-else src="../assets/img/no_img.svg" alt="profile_img" />
+            <div class="credit-intro">
+              <p class="credit-name">{{ item.name }}</p>
+              <p class="credit-character">{{ item.character }}</p>
+            </div>
           </div>
-        </div>
+        </router-link>
       </div>
     </div>
   </div>

@@ -1,24 +1,44 @@
 <template>
-  <div>
+  <div class="list-wrap">
     <ul class="list-container">
-      <div>
-        <li class="poster-list">
-          <a class="poster-link" href="">
-            <img
-              class="poster-img"
-              src="../assets/img/movie_poster.jpg"
-              alt="poster_img"
-            />
-          </a>
-        </li>
-        <p class="rating-number">평점 4.8</p>
-      </div>
+      <li
+        v-for="item in movieRatingList"
+        :key="item.id"
+        class="poster-list rating-poster-list"
+      >
+        <router-link :to="`/movie/${item.id}?type=movie`">
+          <img
+            class="poster-img"
+            :src="`https://image.tmdb.org/t/p/w185/${item.poster_path}`"
+            alt="poster_img"
+          />
+          <p class="rating-number">
+            <span>평점:</span>
+            <span>{{ item.vote_average }}</span>
+          </p>
+        </router-link>
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+export default {
+  data() {
+    return {
+      movieRatingList: [],
+    };
+  },
+  async created() {
+    const rates = await axios({
+      method: "get",
+      url: "https://api.themoviedb.org/3/movie/top_rated?api_key=075ec9542e8f0d1c7b9364e54d4351d8",
+    });
+    console.log(rates.data);
+    this.movieRatingList = rates.data.results;
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>

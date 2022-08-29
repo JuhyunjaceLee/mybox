@@ -25,7 +25,7 @@
                 <h2 class="main-title">평점보기</h2>
                 <div class="rating-btn-wrap">
                   <button @click="show = !show" class="rating-btn">
-                    <span>MOVIE</span>
+                    <span>{{ showText }}</span>
                     <img
                       class="rating-btn-img"
                       src="../assets/img/arrow_bottom.svg"
@@ -33,24 +33,14 @@
                     />
                   </button>
                   <ul v-if="show" class="rating-dropdown">
-                    <li>
-                      <button class="rating-dropdown-btn">
-                        <span>MOVIE</span>
-                      </button>
-                    </li>
-                    <li>
-                      <button class="rating-dropdown-btn">
-                        <span>TV</span>
-                      </button>
-                    </li>
+                    <li @click="showMore('MOVIE'), (btn = 'movie')">MOVIE</li>
+                    <li @click="showMore('TV'), (btn = 'tv')">TV</li>
                   </ul>
                 </div>
               </div>
               <section>
-                <div class="list-wrap">
-                  <RatingMovie></RatingMovie>
-                  <RatingTv></RatingTv>
-                </div>
+                <RatingMovie v-if="btn === 'movie'"></RatingMovie>
+                <RatingTv v-if="btn === 'tv'"></RatingTv>
               </section>
             </div>
           </div>
@@ -74,7 +64,15 @@ export default {
   data() {
     return {
       show: false,
+      btn: "movie",
+      showText: "MOVIE",
     };
+  },
+  methods: {
+    showMore(string) {
+      this.showText = string;
+      this.show = false;
+    },
   },
 };
 </script>
