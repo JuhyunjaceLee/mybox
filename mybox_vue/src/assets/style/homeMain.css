@@ -53,6 +53,7 @@
   top: 47.5%;
   left: -10px;
   cursor: pointer;
+  z-index: 5;
 }
 .next-btn {
   position: absolute;
@@ -67,6 +68,7 @@
   top: 91px;
   right: 15px;
   cursor: pointer;
+  z-index: 5;
 }
 .prev-btn:hover {
   border-top: 5px solid #ffee35;
@@ -83,4 +85,7 @@
   left: -1px;
   font-size: 25px;
   font-weight: 700;
+}
+.swiper-wrapper {
+  display: flex;
 }

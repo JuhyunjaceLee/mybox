@@ -3,9 +3,9 @@
     <section>
       <h2 class="section-title">MOVIE TOP 20</h2>
       <div class="home-list-wrap">
-        <button class="prev-btn prev1"></button>
-        <ul class="home-list-container">
-          <li
+        <button @click="prev1" class="prev-btn"></button>
+        <swiper :options="swiperOption" ref="sw1" class="home-list-container">
+          <swiper-slide
             v-for="(item, index) in movieTopList"
             :key="item.id"
             class="poster-list"
@@ -21,17 +21,21 @@
                 alt="poster_img"
               />
             </router-link>
-          </li>
-        </ul>
-        <button class="next-btn next1"></button>
+          </swiper-slide>
+        </swiper>
+        <button @click="next1" class="next-btn"></button>
       </div>
     </section>
     <section>
       <h2 class="section-title">NOW PLAYING</h2>
       <div class="home-list-wrap">
-        <button class="prev-btn"></button>
-        <ul class="home-list-container">
-          <li v-for="item in nowPlaying" :key="item.id" class="poster-list">
+        <button @click="prev2" class="prev-btn"></button>
+        <swiper :options="swiperOption" ref="sw2" class="home-list-container">
+          <swiper-slide
+            v-for="item in nowPlaying"
+            :key="item.id"
+            class="poster-list"
+          >
             <router-link
               :to="`/movie/${item.id}?type=movie`"
               class="poster-link"
@@ -42,17 +46,21 @@
                 alt="poster_img"
               />
             </router-link>
-          </li>
-        </ul>
-        <button class="next-btn"></button>
+          </swiper-slide>
+        </swiper>
+        <button @click="next2" class="next-btn"></button>
       </div>
     </section>
     <section>
       <h2 class="section-title">개봉 예정작</h2>
       <div class="home-list-wrap">
-        <button class="prev-btn"></button>
-        <ul class="home-list-container">
-          <li v-for="item in upComing" :key="item.id" class="poster-list">
+        <button @click="prev3" class="prev-btn"></button>
+        <swiper :options="swiperOption" ref="sw3" class="home-list-container">
+          <swiper-slide
+            v-for="item in upComing"
+            :key="item.id"
+            class="poster-list"
+          >
             <router-link
               :to="`/movie/${item.id}?type=movie`"
               class="poster-link"
@@ -63,9 +71,9 @@
                 alt="poster_img"
               />
             </router-link>
-          </li>
-        </ul>
-        <button class="next-btn"></button>
+          </swiper-slide>
+        </swiper>
+        <button @click="next3" class="next-btn"></button>
       </div>
     </section>
   </div>
@@ -73,12 +81,23 @@
 
 <script>
 import axios from "axios";
+import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+
 export default {
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
   data() {
     return {
       movieTopList: [],
       nowPlaying: [],
       upComing: [],
+      index: 0,
+      swiperOption: {
+        slidesPerView: 8,
+        loop: true,
+      },
     };
   },
   async created() {
@@ -102,6 +121,30 @@ export default {
     });
     this.upComing = coming.data.results;
     console.log(this.nowPlaying);
+  },
+  mounted() {
+    this.$refs.sw1.$swiper.slideTo(9);
+    console.log(this.$refs.sw1.$swiper);
+  },
+  methods: {
+    prev1() {
+      this.$refs.sw1.$swiper.slidePrev();
+    },
+    next1() {
+      this.$refs.sw1.$swiper.slideNext();
+    },
+    prev2() {
+      this.$refs.sw2.$swiper.slidePrev();
+    },
+    next2() {
+      this.$refs.sw2.$swiper.slideNext();
+    },
+    prev3() {
+      this.$refs.sw3.$swiper.slidePrev();
+    },
+    next3() {
+      this.$refs.sw3.$swiper.slideNext();
+    },
   },
 };
 </script>

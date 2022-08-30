@@ -11,13 +11,13 @@
         </router-link>
         <section class="side-container">
           <ul class="side-list-wrap">
-            <li class="side-list active">
+            <li :class="{ active: routeName === 'home' }" class="side-list">
               <router-link to="/" class="side-link">
                 <img class="side-img" src="../assets/img/home.svg" alt="home" />
                 <p class="side-txt">홈</p>
               </router-link>
             </li>
-            <li class="side-list">
+            <li :class="{ active: routeName === 'search' }" class="side-list">
               <router-link to="/search" class="side-link">
                 <img
                   class="side-img"
@@ -27,7 +27,7 @@
                 <p class="side-txt">찾기</p>
               </router-link>
             </li>
-            <li class="side-list">
+            <li :class="{ active: routeName === 'rating' }" class="side-list">
               <router-link to="/rating" class="side-link">
                 <img
                   class="side-img"
@@ -123,7 +123,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    routeName() {
+      return this.$route.name;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>

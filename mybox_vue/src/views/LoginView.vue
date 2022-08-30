@@ -28,24 +28,26 @@
                 <p>비밀번호를 잊어버리셨나요?</p>
               </a>
             </div>
-            <form class="login-main-form">
+            <form class="login-main-form" @submit.prevent>
               <div>
                 <input
+                  v-model="email"
                   class="input input-email"
-                  type="id"
+                  type="text"
                   placeholder="이메일 (example@gmail.com)"
                   autofocus
                 />
               </div>
               <div>
                 <input
+                  v-model="password"
                   class="input input-pw"
-                  type="pw"
+                  type="password"
                   placeholder="비밀번호"
                 />
               </div>
               <div class="btn-wrap">
-                <button class="login-btn">로그인</button>
+                <button v-on:click="login" class="login-btn">로그인</button>
               </div>
             </form>
             <div class="loginicon-wrap">
@@ -80,10 +82,44 @@
 
 <script>
 import LoginLayout from "@/components/LoginLayout.vue";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+} from "firebase/auth";
 
 export default {
   components: {
     LoginLayout,
+  },
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    login() {
+      const auth = getAuth();
+      signInWithEmailAndPassword(auth, this.email, this.password)
+        .then((userCredential) => {
+          console.log("reonse ::", userCredential);
+          alert(userCredential.user.email.split("@")[0] + "님," + "Welcome!");
+          console.log(userCredential);
+          this.$router.push("/");
+        })
+        .catch((error) => {
+          const errorMessage = error.message;
+          console.log(errorMessage);
+          alert("Oops." + errorMessage);
+        });
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          const uid = user.uid;
+          console.log(uid);
+        }
+      });
+    },
   },
 };
 </script>

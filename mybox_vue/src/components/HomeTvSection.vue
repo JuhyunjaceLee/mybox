@@ -3,9 +3,9 @@
     <section>
       <h2 class="section-title">TV TOP 20</h2>
       <div class="home-list-wrap">
-        <button class="prev-btn prev1"></button>
-        <ul class="home-list-container">
-          <li
+        <button @click="prev1" class="prev-btn prev1"></button>
+        <swiper :options="swiperOption" ref="sw1" class="home-list-container">
+          <swiper-slide
             v-for="(item, index) in tvTopList"
             :key="item.id"
             class="poster-list"
@@ -18,17 +18,21 @@
                 alt="poster_img"
               />
             </router-link>
-          </li>
-        </ul>
-        <button class="next-btn next1"></button>
+          </swiper-slide>
+        </swiper>
+        <button @click="next1" class="next-btn next1"></button>
       </div>
     </section>
     <section>
       <h2 class="section-title">ON AIR</h2>
       <div class="home-list-wrap">
-        <button class="prev-btn"></button>
-        <ul class="home-list-container">
-          <li v-for="item in onAirList" :key="item.id" class="poster-list">
+        <button @click="prev2" class="prev-btn"></button>
+        <swiper :options="swiperOption" ref="sw2" class="home-list-container">
+          <swiper-slide
+            v-for="item in onAirList"
+            :key="item.id"
+            class="poster-list"
+          >
             <router-link :to="`/tv/${item.id}?type=tv`" class="poster-link">
               <img
                 class="poster-img"
@@ -36,17 +40,21 @@
                 alt="poster_img"
               />
             </router-link>
-          </li>
-        </ul>
-        <button class="next-btn"></button>
+          </swiper-slide>
+        </swiper>
+        <button @click="next2" class="next-btn"></button>
       </div>
     </section>
     <section>
       <h2 class="section-title">화제 방영작</h2>
       <div class="home-list-wrap">
-        <button class="prev-btn"></button>
-        <ul class="home-list-container">
-          <li v-for="item in popularList" :key="item.id" class="poster-list">
+        <button @click="prev3" class="prev-btn"></button>
+        <swiper :options="swiperOption" ref="sw3" class="home-list-container">
+          <swiper-slide
+            v-for="item in popularList"
+            :key="item.id"
+            class="poster-list"
+          >
             <router-link :to="`/tv/${item.id}?type=tv`" class="poster-link">
               <img
                 class="poster-img"
@@ -54,9 +62,9 @@
                 alt="poster_img"
               />
             </router-link>
-          </li>
-        </ul>
-        <button class="next-btn"></button>
+          </swiper-slide>
+        </swiper>
+        <button @click="next3" class="next-btn"></button>
       </div>
     </section>
   </div>
@@ -64,12 +72,23 @@
 
 <script>
 import axios from "axios";
+import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+
 export default {
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
   data() {
     return {
       tvTopList: [],
       onAirList: [],
       popularList: [],
+      index: 0,
+      swiperOption: {
+        slidesPerView: 8,
+        loop: true,
+      },
     };
   },
   async created() {
@@ -93,6 +112,30 @@ export default {
     });
     this.popularList = popular.data.results;
     console.log(this.popularList);
+  },
+  mounted() {
+    this.$refs.sw1.$swiper.slideTo(9);
+    console.log(this.$refs.sw1.$swiper);
+  },
+  methods: {
+    prev1() {
+      this.$refs.sw1.$swiper.slidePrev();
+    },
+    next1() {
+      this.$refs.sw1.$swiper.slideNext();
+    },
+    prev2() {
+      this.$refs.sw2.$swiper.slidePrev();
+    },
+    next2() {
+      this.$refs.sw2.$swiper.slideNext();
+    },
+    prev3() {
+      this.$refs.sw3.$swiper.slidePrev();
+    },
+    next3() {
+      this.$refs.sw3.$swiper.slideNext();
+    },
   },
 };
 </script>
