@@ -2,7 +2,9 @@
 
 ## 프로젝트 URL
 
-[MY BOX](https://stellular-granita-afbdbd.netlify.app/)
+<a href="https://stellular-granita-afbdbd.netlify.app/">
+<img src="https://user-images.githubusercontent.com/94448281/187569222-561e2865-e562-4331-9fc1-fb6841e37282.png" width="100">
+</a>
 
 ## 프로젝트 제작기간
 
