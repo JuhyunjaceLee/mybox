@@ -21,6 +21,7 @@
       </template>
       <template v-slot:main>
         <main class="login-main">
+          <div></div>
           <div class="login-main-wrap">
             <div class="loginmain-title-wrap">
               <h2 class="loginmain-title">회원가입</h2>
@@ -53,40 +54,60 @@
                 <ul>
                   <li class="checkbox-list">
                     <label for="checkbox" class="checkbox-wrap">
-                      <span class="check active"></span>
-                      <input type="checkbox" id="checkbox1" />
+                      <span
+                        @click="chkAll"
+                        :class="{ active: isActive }"
+                        class="check"
+                      ></span>
+                      <input type="checkbox" id="checkbox1" class="checkbox" />
                       <p class="checkbox-text">전체 약관에 동의합니다</p>
                     </label>
                   </li>
                   <li class="checkbox-list">
                     <label for="checkbox" class="checkbox-wrap">
-                      <span class="check"></span>
-                      <input type="checkbox" id="checkbox2" />
+                      <span
+                        @click="chk2"
+                        :class="[{ active: isActive }, { active: isActive2 }]"
+                        class="check"
+                      ></span>
+                      <input type="checkbox" id="checkbox2" class="checkbox" />
                       <p class="checkbox-text">만 14세 이상입니다</p>
                     </label>
                   </li>
                   <li class="checkbox-list">
                     <label for="checkbox" class="checkbox-wrap">
-                      <span class="check"></span>
-                      <input type="checkbox" id="checkbox3" />
+                      <span
+                        @click="chk3"
+                        :class="[{ active: isActive }, { active: isActive3 }]"
+                        class="check"
+                      ></span>
+                      <input type="checkbox" id="checkbox3" class="checkbox" />
                       <p class="checkbox-text">
-                        <a>왓챠피디아 서비스 이용약관</a>에 동의합니다 (필수)
+                        <a>마이박스 서비스 이용약관</a>에 동의합니다 (필수)
                       </p>
                     </label>
                   </li>
                   <li class="checkbox-list">
                     <label for="checkbox" class="checkbox-wrap">
-                      <span class="check"></span>
-                      <input type="checkbox" id="checkbox4" />
+                      <span
+                        @click="chk4"
+                        :class="[{ active: isActive }, { active: isActive4 }]"
+                        class="check"
+                      ></span>
+                      <input type="checkbox" id="checkbox4" class="checkbox" />
                       <p class="checkbox-text">
-                        <a>왓챠 서비스 이용약관</a>에 동의합니다 (필수)
+                        <a>마이박스 서비스 이용약관</a>에 동의합니다 (필수)
                       </p>
                     </label>
                   </li>
                   <li class="checkbox-list">
                     <label for="checkbox" class="checkbox-wrap">
-                      <span class="check"></span>
-                      <input type="checkbox" id="checkbox5" />
+                      <span
+                        @click="chk5"
+                        :class="[{ active: isActive }, { active: isActive5 }]"
+                        class="check"
+                      ></span>
+                      <input type="checkbox" id="checkbox5" class="checkbox" />
                       <p class="checkbox-text">
                         <a>개인정보 수집 및 이용에 대한 안내</a>에 동의합니다
                         (필수)
@@ -95,8 +116,12 @@
                   </li>
                   <li class="checkbox-list">
                     <label for="checkbox" class="checkbox-wrap">
-                      <span class="check"></span>
-                      <input type="checkbox" id="checkbox6" />
+                      <span
+                        @click="chk6"
+                        :class="[{ active: isActive }, { active: isActive6 }]"
+                        class="check"
+                      ></span>
+                      <input type="checkbox" id="checkbox6" class="checkbox" />
                       <p class="checkbox-text">
                         <a>신작 알림 이벤트 정보 수신</a>에 동의합니다 (선택)
                       </p>
@@ -114,6 +139,7 @@
               </p>
             </div>
           </div>
+          <div></div>
         </main>
       </template>
     </LoginLayout>
@@ -132,6 +158,12 @@ export default {
     return {
       email: "",
       password: "",
+      isActive: false,
+      isActive2: false,
+      isActive3: false,
+      isActive4: false,
+      isActive5: false,
+      isActive6: false,
     };
   },
   methods: {
@@ -147,6 +179,24 @@ export default {
           const errorMessage = error.message;
           alert("Oops." + errorMessage);
         });
+    },
+    chkAll() {
+      this.isActive = !this.isActive;
+    },
+    chk2() {
+      this.isActive2 = !this.isActive2;
+    },
+    chk3() {
+      this.isActive3 = !this.isActive3;
+    },
+    chk4() {
+      this.isActive4 = !this.isActive4;
+    },
+    chk5() {
+      this.isActive5 = !this.isActive5;
+    },
+    chk6() {
+      this.isActive6 = !this.isActive6;
     },
   },
 };

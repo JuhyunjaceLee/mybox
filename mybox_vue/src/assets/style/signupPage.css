@@ -19,7 +19,7 @@
   background-color: #ffee35;
   border: none;
 }
-#checkbox {
+.checkbox {
   visibility: hidden;
 }
 .checkbox-text {

@@ -6,13 +6,13 @@
           <div class="account-wrap">
             <div></div>
             <div class="acoount-content">
-              <a class="account" href="#">
+              <router-link to="/login" class="account">
                 <img
                   class="account-img"
                   src="../assets/img/account.svg"
                   alt="account"
                 />
-              </a>
+              </router-link>
             </div>
           </div>
         </header>

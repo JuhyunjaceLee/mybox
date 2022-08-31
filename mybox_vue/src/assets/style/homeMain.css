@@ -65,7 +65,8 @@
   border-bottom: none;
   display: inline-block;
   transform: rotate(45deg);
-  top: 91px;
+  top: 47.5%;
+
   right: 15px;
   cursor: pointer;
   z-index: 5;
