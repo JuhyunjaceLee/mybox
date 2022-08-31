@@ -1,24 +1,13 @@
-# mybox_vue
+# Movie Site Portfolio (MyBox🎁)
 
-## Project setup
-```
-npm install
-```
+## 제작기간
+2022년 8월 16일 ~ 8월 30일
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 프로젝트 목표
+HTML, CSS, JAVASCRIPT, Vue.js 의 학습한 내용과 TMDB API를 활용한 영화 및 TV프로그램 소개 사이트 제작
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## SKILLS
+* HTML5
+* CSS
+* JAVASCRIPT
+* Vue.js
