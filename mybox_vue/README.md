@@ -1,14 +1,9 @@
 # Movie Site Portfolio (MyBox🎁)
 
 ## 프로젝트 URL
-
-<<<<<<< HEAD
-[MY BOX](https://stellular-granita-afbdbd.netlify.app/)
-=======
 <a href="https://stellular-granita-afbdbd.netlify.app/">
   <img src="https://user-images.githubusercontent.com/94448281/187569222-561e2865-e562-4331-9fc1-fb6841e37282.png" width="100">
 </a>
->>>>>>> 5380da64f81959416e38700b36f30d4d19417374
 
 ## 프로젝트 제작기간
 
@@ -19,13 +14,6 @@
 HTML, CSS, JAVASCRIPT, Vue.js 의 학습한 내용과 TMDB API를 활용한 영화 및 TV프로그램 소개 사이트 제작
 
 ## SKILLS
-
-<<<<<<< HEAD
-- HTML5
-- CSS
-- JAVASCRIPT
-- Vue.js
-=======
 <div>
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white" />
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=CSS3&logoColor=white" />
@@ -68,4 +56,4 @@ HTML, CSS, JAVASCRIPT, Vue.js 의 학습한 내용과 TMDB API를 활용한 영�
 
 ### 로그인페이지 & 회원가입페이지
 - Firebase를 연동하여 회원가입과 로그인이 가능하게 구현하였습니다
->>>>>>> 5380da64f81959416e38700b36f30d4d19417374
+
