@@ -35,7 +35,7 @@ export default {
       method: "get",
       url: "https://api.themoviedb.org/3/tv/top_rated?api_key=075ec9542e8f0d1c7b9364e54d4351d8",
     });
-    console.log(rates.data);
+    // console.log(rates.data);
     this.tvRatingList = rates.data.results;
   },
 };

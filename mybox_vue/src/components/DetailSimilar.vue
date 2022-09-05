@@ -30,7 +30,7 @@ export default {
       url: `https://api.themoviedb.org/3/${this.$route.query.type}/${this.$route.params.id}/similar?api_key=075ec9542e8f0d1c7b9364e54d4351d8`,
     });
     this.similarMovieList = similar.data.results;
-    console.log(this.$route.query);
+    // console.log(this.$route.query);
   },
 };
 </script>

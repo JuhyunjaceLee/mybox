@@ -62,7 +62,7 @@ export default {
       url: `https://api.themoviedb.org/3/${type}/${this.$route.params.id}/credits?api_key=075ec9542e8f0d1c7b9364e54d4351d8`,
     });
     this.creditsList = credits.data.cast;
-    console.log(credits.data);
+    // console.log(credits.data);
 
     const directings = credits.data.crew.filter(
       (v) => v.department === "Directing"

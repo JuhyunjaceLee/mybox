@@ -43,7 +43,7 @@ export default {
       url: "https://api.themoviedb.org/3/trending/all/week?api_key=075ec9542e8f0d1c7b9364e54d4351d8",
     });
     this.trendingList = trend.data.results;
-    console.log(this.trendingList);
+    // console.log(this.trendingList);
   },
 };
 </script>

@@ -81,7 +81,7 @@ export default {
       url: `https://api.themoviedb.org/3/person/${this.$route.params.id}?api_key=3d6c850fedd64a507e51cfb2335f305c`,
     });
     this.personData = person.data;
-    console.log(this.personData);
+    // console.log(this.personData);
   },
 };
 </script>

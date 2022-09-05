@@ -135,7 +135,7 @@ export default {
       url: `https://api.themoviedb.org/3/${type}/${this.$route.params.id}?api_key=3d6c850fedd64a507e51cfb2335f305c`,
     });
     this.detailData = result.data;
-    console.log(this.detailData);
+    // console.log(this.detailData);
   },
 };
 </script>

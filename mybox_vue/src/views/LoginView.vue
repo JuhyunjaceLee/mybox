@@ -103,9 +103,9 @@ export default {
       const auth = getAuth();
       signInWithEmailAndPassword(auth, this.email, this.password)
         .then((userCredential) => {
-          console.log("reonse ::", userCredential);
+          // console.log("reonse ::", userCredential);
           alert(userCredential.user.email.split("@")[0] + "님," + "Welcome!");
-          console.log(userCredential);
+          // console.log(userCredential);
           this.$router.push("/");
         })
         .catch((error) => {

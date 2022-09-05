@@ -106,25 +106,25 @@ export default {
       url: "https://api.themoviedb.org/3/movie/top_rated?api_key=075ec9542e8f0d1c7b9364e54d4351d8",
     });
     this.movieTopList = top.data.results;
-    console.log(this.movieTopList);
+    // console.log(this.movieTopList);
 
     const now = await axios({
       method: "get",
       url: "https://api.themoviedb.org/3/movie/now_playing?api_key=075ec9542e8f0d1c7b9364e54d4351d8",
     });
     this.nowPlaying = now.data.results;
-    console.log(this.nowPlaying);
+    // console.log(this.nowPlaying);
 
     const coming = await axios({
       method: "get",
       url: "https://api.themoviedb.org/3/movie/upcoming?api_key=075ec9542e8f0d1c7b9364e54d4351d8",
     });
     this.upComing = coming.data.results;
-    console.log(this.nowPlaying);
+    // console.log(this.nowPlaying);
   },
   mounted() {
     this.$refs.sw1.$swiper.slideTo(9);
-    console.log(this.$refs.sw1.$swiper);
+    // console.log(this.$refs.sw1.$swiper);
   },
   methods: {
     prev1() {

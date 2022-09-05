@@ -64,9 +64,9 @@ export default {
       url: `https://api.themoviedb.org/3/search/multi?api_key=075ec9542e8f0d1c7b9364e54d4351d8&query=${this.searchKeyword}`,
     });
     this.searchList = searchResult.data.results;
-    console.log(this.searchList);
+    // console.log(this.searchList);
     this.searchPersonList = searchResult.data.results;
-    console.log(this.searchPersonList);
+    // console.log(this.searchPersonList);
     this.total = searchResult.data.total_results;
   },
 };

@@ -97,25 +97,25 @@ export default {
       url: "https://api.themoviedb.org/3/tv/top_rated?api_key=075ec9542e8f0d1c7b9364e54d4351d8",
     });
     this.tvTopList = top.data.results;
-    console.log(this.tvTopList);
+    // console.log(this.tvTopList);
 
     const onAir = await axios({
       method: "get",
       url: "https://api.themoviedb.org/3/tv/on_the_air?api_key=075ec9542e8f0d1c7b9364e54d4351d8",
     });
     this.onAirList = onAir.data.results;
-    console.log(this.onAirList);
+    // console.log(this.onAirList);
 
     const popular = await axios({
       method: "get",
       url: "https://api.themoviedb.org/3/tv/popular?api_key=075ec9542e8f0d1c7b9364e54d4351d8",
     });
     this.popularList = popular.data.results;
-    console.log(this.popularList);
+    // console.log(this.popularList);
   },
   mounted() {
     this.$refs.sw1.$swiper.slideTo(9);
-    console.log(this.$refs.sw1.$swiper);
+    // console.log(this.$refs.sw1.$swiper);
   },
   methods: {
     prev1() {

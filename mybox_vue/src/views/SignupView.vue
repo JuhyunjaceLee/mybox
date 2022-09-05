@@ -172,7 +172,7 @@ export default {
       createUserWithEmailAndPassword(auth, this.email, this.password)
         .then((userCredential) => {
           alert(userCredential.user.email.split("@")[0] + "님," + "Welcome!");
-          console.log(userCredential);
+          // console.log(userCredential);
           this.$router.push("/");
         })
         .catch((error) => {
