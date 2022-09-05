@@ -3,7 +3,7 @@
 ## 프로젝트 URL
 
 <a href="https://stellular-granita-afbdbd.netlify.app/">
-<img src="https://user-images.githubusercontent.com/94448281/187569222-561e2865-e562-4331-9fc1-fb6841e37282.png" width="100">
+  <img src="https://user-images.githubusercontent.com/94448281/187569222-561e2865-e562-4331-9fc1-fb6841e37282.png" width="100">
 </a>
 
 ## 프로젝트 제작기간
@@ -17,11 +17,16 @@ HTML, CSS, JAVASCRIPT, Vue.js 의 학습한 내용과 TMDB API를 활용한 영�
 ## SKILLS
 
 <div>
-	<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white" />
-	<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=CSS3&logoColor=white" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=CSS3&logoColor=white" />
   <img src="https://img.shields.io/badge/JAVASCRIPT-F7DF1E?style=flat&logo=JAVASCRIPT&logoColor=black" />
   <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=flat&logo=Vue.js&logoColor=white" />
 </div>
+
+## 프로젝트 메모 페이지
+<a href="https://www.notion.so/MyBox-Portfolio-9450e85313254a679a1e0cdfee412e18">
+<img src="https://img.shields.io/badge/Notion-000000?style=flat&logo=Notion&logoColor=white" />  
+</a>
 
 ## 프로젝트 상세 소개
 
