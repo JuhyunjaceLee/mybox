@@ -1,5 +1,8 @@
 # Movie Site Portfolio (MyBox🎁)
 
+## Thumbnail
+<img src="https://github.com/JuhyunjaceLee/mybox/assets/94448281/a4208f65-029f-4668-9252-551b58397695" width="500"/>
+
 ## 프로젝트 URL
 <a href="https://stellular-granita-afbdbd.netlify.app/">
   <img src="https://user-images.githubusercontent.com/94448281/187569222-561e2865-e562-4331-9fc1-fb6841e37282.png" width="100">
@@ -25,6 +28,10 @@ HTML, CSS, JAVASCRIPT, Vue.js 의 학습한 내용과 TMDB API를 활용한 영�
 <a href="https://www.notion.so/MyBox-Portfolio-9450e85313254a679a1e0cdfee412e18">
 <img src="https://img.shields.io/badge/Notion-000000?style=flat&logo=Notion&logoColor=white" />  
 </a>
+
+## 문제와 해결방법
+* ### <a href="https://desert-edam-bea.notion.site/swiper-dfd2d49df8df4a75b035e9c7f2785ec0?pvs=4">Swiper</a>
+* ### <a href="https://desert-edam-bea.notion.site/Firebase-cd675dfcc0534fa5b0b79fb3ea636599?pvs=4">Firebase</a>
 
 ## 프로젝트 상세 소개
 
